@@ -1,0 +1,73 @@
+= 学习node
+//tag::meta[]
+xiayx <xiayouxue@hotmail.com>
+v1.0, 2019-01-07: SNAPSHOT
+:doctype: docbook
+:toc: left
+:numbered:
+:imagesdir: assets/images
+:sourcedir: src/main/java
+:resourcesdir: src/main/resources
+:testsourcedir: src/test/java
+:source-highlighter: highlightjs
+:coderay-linenums-mode: inline
+//end::meta[]
+
+Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 +
+Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。
+
+== 参考
+* https://nodejs.org/en/[官网]
+* http://nodejs.cn/[中文网]
+
+== 命令
+node的命令。
+
+* 进入终端模式：``node``
+* 运行脚本文件：``node 脚本文件``
+
+== 语法
+js的语法。
+
+.变量作用域
+* js内置对象(全局变量)
+* node全局变量
+* node模块变量
+
+.作用域的原理
+[source%nowrap,javascript]
+----
+//全局作用域
+with(global){
+
+}
+
+//模块作用域，moduleEnv是运行时内部变量，开发者无法访问
+with(moduleEnv){
+
+}
+----
+
+=== 全局变量
+全局变量在所有模块中都可使用。
+
+``global``类似浏览器环境下的``window``。你可以通过``global.Array``或者直接``Array``。
+
+* 示例：``node global.js``
+
+=== 模块
+在 Node.js 模块系统中，每个文件都视为独立的模块。
+
+.常用的模块变量
+* ``__dirname``：模块目录路径
+* ``__filename``：模块文件路径
+* ``exports``：exports = module.exports
+* ``module``：你可以通过``module.exports``向外暴露变量和方法
+* ``require()``：你可以通过``require``引入其他模块暴露的变量和方法
+
+* 示例：``node module.js``
+
+
+
+
+
